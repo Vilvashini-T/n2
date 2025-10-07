@@ -25,9 +25,21 @@ const noteSchema = new mongoose.Schema({
     default: false
   },
   sharedWith: [{
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }],
+    ref: 'User',
+    required: true
+  },
+  permission: {
+    type: String,
+    enum: ['VIEW', 'EDIT'],
+    default: 'VIEW'
+  },
+  sharedAt: {
+    type: Date,
+    default: Date.now
+  }
+}],
   viewCount: {
     type: Number,
     default: 0

@@ -3,6 +3,7 @@ import { userResolvers } from './userResolvers.js';
 import { noteResolvers } from './noteResolvers.js';
 import { commentResolvers } from './commentResolvers.js';
 import { analyticsResolvers } from './analyticsResolvers.js';
+import { sttResolvers } from './sttResolvers.js';
 
 const resolvers = {
   Query: {
@@ -14,8 +15,8 @@ const resolvers = {
     ...userResolvers.Mutation,
     ...noteResolvers.Mutation,
     ...commentResolvers.Mutation,
+    ...sttResolvers.Mutation,
   },
-  // Field resolvers
   User: userResolvers.User || {},
   Note: noteResolvers.Note || {},
   Comment: commentResolvers.Comment || {},

@@ -5,6 +5,7 @@ import { createServer } from 'http';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 import cors from 'cors';
 import jwt from 'jsonwebtoken';
+import resolvers from './schemas/resolvers/index.js';
 
 // HARDCODED CONFIGURATION
 const config = {
@@ -29,7 +30,6 @@ process.env.NODE_ENV = config.NODE_ENV;
 
 import connectDB from './config/database.js';
 import typeDefs from './schemas/typeDefs.js';
-import resolvers from './schemas/resolvers/index.js';
 import User from './models/User.js';
 
 // Simple auth function with proper imports
@@ -108,6 +108,9 @@ const server = new ApolloServer({
     
     return { user };
   },
+  uploads: false, // Disable built-in upload handling
+  introspection: true,
+  playground: true,
 });
 
 // Start server function

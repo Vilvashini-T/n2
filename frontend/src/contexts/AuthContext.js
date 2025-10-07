@@ -3,11 +3,21 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const AuthContext = createContext();
 
+// In your AuthContext.js - add debug logging
 export const useAuth = () => {
-  const context = useContext(AuthContext);
+  const context = React.useContext(AuthContext);
+  
+  // ✅ ADD DEBUG
   if (!context) {
+    console.error('❌ AuthContext is not available. Make sure AuthProvider is properly set up.');
     throw new Error('useAuth must be used within an AuthProvider');
   }
+  
+  console.log('🔐 useAuth returning:', { 
+    user: context.user, 
+    loading: context.loading 
+  });
+  
   return context;
 };
 
