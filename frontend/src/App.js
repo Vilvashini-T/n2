@@ -462,8 +462,6 @@ const SharedNotes = () => {
     );
   }
 
-  const sharedNotes = data?.getSharedNotes || [];
-
   // Filter notes based on active tab
   const filteredNotes = sharedNotes.filter(sharedNote => {
     if (activeTab === 'all') return true;
