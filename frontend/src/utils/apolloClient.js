@@ -4,7 +4,7 @@ import { onError } from '@apollo/client/link/error';
 
 // HTTP link
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4001/graphql', // Make sure this matches your backend port
+  uri: 'http://localhost:5000/graphql', // Make sure this matches your backend port
 });
 
 // Auth link

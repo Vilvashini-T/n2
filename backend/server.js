@@ -9,10 +9,10 @@ import resolvers from './schemas/resolvers/index.js';
 
 // HARDCODED CONFIGURATION
 const config = {
-  MONGODB_URI: 'mongodb+srv://tvilvashini:notesapp123@cluster0.hmeugyr.mongodb.net/notesapp?retryWrites=true&w=majority&appName=Cluster0',
-  JWT_SECRET: 'notesapp-super-secret-jwt-key-2024-change-in-production',
+  MONGODB_URI: 'mongodb://127.0.0.1:27010/notesapp',
+  JWT_SECRET: 'supersecret123',
   JWT_EXPIRES_IN: '90d',
-  PORT: 4001,
+  PORT: 5000,
   NODE_ENV: 'development'
 };
 
